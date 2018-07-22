@@ -8,4 +8,4 @@ website: www.ssamjh.nz
 api-version: 1.13
 commands:
   test:
-    description: Base command for Up2Date.
+    description: Test command for Sam's plugin!

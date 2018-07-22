@@ -23,6 +23,25 @@ public final class SpigotPlugin extends JavaPlugin {
         if (cmd.getName().equalsIgnoreCase("test")) {
             Player player = (Player) sender;
             Double playerHealth = player.getHealth();
+
+            String[][] wordGrid = {
+                    {"&aHello, ", "&cmy ", "&aname ", "&cis: "},
+                    {"&aSam", "&cJohn", "&aHowell, "},
+                    {"&cand ", "&ayou ", "&call ", "&asuck&c!"}
+            };
+
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[0][0]));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[0][1]));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[0][2]));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[0][3]));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[1][0]));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[1][1]));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[1][2]));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[2][0]));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[2][1]));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[2][2]));
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[2][3]));
+
             player.sendMessage(String.format("%.2f", playerHealth));
             if (playerHealth < 2D) {
                 player.setHealth(playerHealth + 8D);

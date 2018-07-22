@@ -5,6 +5,7 @@ prefix: SpigotPlugin
 authors: [ssamjh]
 description: Sam's First Spigot plugin
 website: www.ssamjh.nz
+api-version: 1.13
 commands:
   test:
     description: Base command for Up2Date.

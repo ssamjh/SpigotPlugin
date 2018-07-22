@@ -1,0 +1,10 @@
+name: SpigotPlugin
+version: ${project.version}
+main: nz.ssamjh.spigotplugin.SpigotPlugin
+prefix: SpigotPlugin
+authors: [ssamjh]
+description: Sam's First Spigot plugin
+website: www.ssamjh.nz
+commands:
+  test:
+    description: Base command for Up2Date.

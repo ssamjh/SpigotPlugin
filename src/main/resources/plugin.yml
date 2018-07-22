@@ -7,5 +7,7 @@ description: Sam's First Spigot plugin
 website: www.ssamjh.nz
 api-version: 1.13
 commands:
-  test:
-    description: Test command for Sam's plugin!
+  health-test:
+    description: Health testing
+  message-test:
+    description: Message testing

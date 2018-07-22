@@ -20,27 +20,9 @@ public final class SpigotPlugin extends JavaPlugin {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("test")) {
+        if (cmd.getName().equalsIgnoreCase("health-test")) {
             Player player = (Player) sender;
             Double playerHealth = player.getHealth();
-
-            String[][] wordGrid = {
-                    {"&aHello, ", "&cmy ", "&aname ", "&cis: "},
-                    {"&aSam", "&cJohn", "&aHowell, "},
-                    {"&cand ", "&ayou ", "&call ", "&asuck&c!"}
-            };
-
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[0][0]));
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[0][1]));
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[0][2]));
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[0][3]));
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[1][0]));
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[1][1]));
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[1][2]));
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[2][0]));
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[2][1]));
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[2][2]));
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[2][3]));
 
             player.sendMessage(String.format("%.2f", playerHealth));
             if (playerHealth < 2D) {
@@ -60,7 +42,27 @@ public final class SpigotPlugin extends JavaPlugin {
             if (!(sender instanceof Player)) {
                 sender.sendMessage("This command may only be executed by a player");
             }
+        }
+        if (cmd.getName().equalsIgnoreCase("message-test")) {
+            Player player = (Player) sender;
 
+            String[][] wordGrid = {
+                    {"&aHello, ", "&cmy ", "&aname ", "&cis: "},
+                    {"&aSam ", "&cJohn ", "&aHowell, "},
+                    {"&cand ", "&ayou ", "&call ", "&asuck&c!"}
+            };
+
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[0][0]
+                                                                                   + wordGrid[0][1]
+                                                                                   + wordGrid[0][2]
+                                                                                   + wordGrid[0][3]
+                                                                                   + wordGrid[1][0]
+                                                                                   + wordGrid[1][1]
+                                                                                   + wordGrid[1][2]
+                                                                                   + wordGrid[2][0]
+                                                                                   + wordGrid[2][1]
+                                                                                   + wordGrid[2][2]
+                                                                                   + wordGrid[2][3]));
         }
         return false;
     }

@@ -6,6 +6,17 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+class Person {
+    String name;
+    int age;
+
+    public void count() {
+        for (int i = 0; i < 10; i++) {
+            SpigotPlugin.getPlugin().getLogger();
+        }
+    }
+}
+
 public final class SpigotPlugin extends JavaPlugin {
 
     @Override
@@ -38,10 +49,6 @@ public final class SpigotPlugin extends JavaPlugin {
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cYou have enough health so you get none!"));
             }
             return true;
-        } else if (cmd.getName().equalsIgnoreCase("test")) {
-            if (!(sender instanceof Player)) {
-                sender.sendMessage("This command may only be executed by a player");
-            }
         }
         if (cmd.getName().equalsIgnoreCase("message-test")) {
             Player player = (Player) sender;

@@ -12,7 +12,7 @@ class Person {
 
     public void count() {
         for (int i = 0; i < 10; i++) {
-            SpigotPlugin.getPlugin().getLogger();
+            // SpigotPlugin.getPlugin().getLogger();
         }
     }
 }
@@ -58,7 +58,7 @@ public final class SpigotPlugin extends JavaPlugin {
                     {"&aSam ", "&cJohn ", "&aHowell, "},
                     {"&cand ", "&ayou ", "&call ", "&asuck&c!"}
             };
-
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lHELLO YOU SUCK! &a&lNO YOU DON'T, DON'T LISTEN TO HIM!"));
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', wordGrid[0][0] + wordGrid[0][1] + wordGrid[0][2] + wordGrid[0][3] + wordGrid[1][0] + wordGrid[1][1] + wordGrid[1][2] + wordGrid[2][0] + wordGrid[2][1] + wordGrid[2][2] + wordGrid[2][3]));
         }
         return false;

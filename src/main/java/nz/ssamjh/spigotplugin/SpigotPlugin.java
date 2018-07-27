@@ -6,21 +6,17 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-class Person {
-    String name;
-    int age;
-
-    public void count() {
-        for (int i = 0; i < 10; i++) {
-            // SpigotPlugin.getPlugin().getLogger();
-        }
-    }
-}
-
 public final class SpigotPlugin extends JavaPlugin {
+
+    private static SpigotPlugin instance;
+
+    public static SpigotPlugin getInstance() {
+        return instance;
+    }
 
     @Override
     public void onEnable() {
+        instance = this;
         getLogger().info("Plugin has been enabled.");
     }
 
@@ -34,8 +30,16 @@ public final class SpigotPlugin extends JavaPlugin {
         if (cmd.getName().equalsIgnoreCase("health-test")) {
             Player player = (Player) sender;
             Double playerHealth = player.getHealth();
+            if (Person.getInstance().doubleNumber > 0D)
+                player.sendMessage("Your health last time you ran the command was: " + String.format("%.2f", Person.getInstance().doubleNumber));
+            else {
+                player.sendMessage("This is the first time you are running the command so no history for you, cuck!");
+            }
 
-            player.sendMessage(String.format("%.2f", playerHealth));
+            Person.getInstance().doubleNumber = playerHealth;
+
+
+            // player.sendMessage(String.format("%.2f", playerHealth));
             if (playerHealth < 2D) {
                 player.setHealth(playerHealth + 8D);
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a+4HP"));
